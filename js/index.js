@@ -1,13 +1,17 @@
 "use strict";
 const btn = document.querySelector('#btn');
 let timeId;
+let i =0;
 btn.addEventListener('click', ()=>{
    timeId = setTimeout(logger,1000);
+   timeId = setInterval(logger,500);
 })
 function logger (){
     console.log('set time out');
+    clearInterval(timeId); 
+    i++;
 }
-clearInterval(timeId);
+clearInterval(timeId); 
 // First method
 // setTimeout(() =>{   //Ikkita qiymat qabul qiladi (),Time;
 //     console.log('set time out');
